@@ -13,7 +13,7 @@ try:
     ia = Cinemagoer('http')
 except Exception:
     try:
-        ia = Cinemagoer()
+        ia = Cinemagoer(accessSystem="http")
     except Exception as e:
         logger.error(f"Cinemagoer init error: {e}")
         ia = None
