@@ -9,7 +9,14 @@ from imdb import Cinemagoer
 
 
 logger = logging.getLogger(__name__)
-ia = Cinemagoer()
+try:
+    ia = Cinemagoer('http')
+except Exception:
+    try:
+        ia = Cinemagoer()
+    except Exception as e:
+        logger.error(f"Cinemagoer init error: {e}")
+        ia = None
 LONG_IMDB_DESCRIPTION = False
 
 Image.MAX_IMAGE_PIXELS = None

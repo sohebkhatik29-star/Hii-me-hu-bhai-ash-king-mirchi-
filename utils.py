@@ -31,7 +31,14 @@ BTN_URL_REGEX = re.compile(
 )
 
 
-imdb = Cinemagoer() 
+try:
+    imdb = Cinemagoer('http')
+except Exception:
+    try:
+        imdb = Cinemagoer()
+    except Exception as e:
+        logger.error(f"IMDb init error: {e}")
+        imdb = None 
 BANNED = {}
 SMART_OPEN = '“'
 SMART_CLOSE = '”'
