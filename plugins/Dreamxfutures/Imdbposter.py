@@ -10,10 +10,10 @@ from imdb import Cinemagoer
 
 logger = logging.getLogger(__name__)
 try:
-    ia = Cinemagoer('http')
+    ia = Cinemagoer()
 except Exception:
     try:
-        ia = Cinemagoer(accessSystem="sqlite:///:memory:")
+        ia = Cinemagoer()
     except Exception as e:
         logger.error(f"Cinemagoer init error: {e}")
         ia = None

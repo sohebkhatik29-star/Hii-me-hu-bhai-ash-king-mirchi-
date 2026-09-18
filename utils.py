@@ -32,10 +32,10 @@ BTN_URL_REGEX = re.compile(
 
 
 try:
-    imdb = Cinemagoer('http')
+    imdb = Cinemagoer()
 except Exception:
     try:
-        imdb = Cinemagoer(accessSystem="sqlite:///:memory:")
+        imdb = Cinemagoer()
     except Exception as e:
         logger.error(f"IMDb init error: {e}")
         imdb = None 
