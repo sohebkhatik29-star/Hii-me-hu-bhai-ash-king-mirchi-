@@ -13,7 +13,7 @@ try:
     ia = Cinemagoer('http')
 except Exception:
     try:
-        ia = Cinemagoer(accessSystem="http")
+        ia = Cinemagoer(accessSystem="sqlite:///:memory:")
     except Exception as e:
         logger.error(f"Cinemagoer init error: {e}")
         ia = None

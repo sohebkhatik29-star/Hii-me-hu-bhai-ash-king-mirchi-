@@ -35,7 +35,7 @@ try:
     imdb = Cinemagoer('http')
 except Exception:
     try:
-        imdb = Cinemagoer(accessSystem="http")
+        imdb = Cinemagoer(accessSystem="sqlite:///:memory:")
     except Exception as e:
         logger.error(f"IMDb init error: {e}")
         imdb = None 
